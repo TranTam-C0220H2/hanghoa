@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <title>Biểu mẫu</title>
     <style>
+        td {
+            text-align: center;
+        }
         #myForm{
             display: none;
         }
-
+        #myForm1{
+            display: none;
+        }
+        #myTable{
+            border-collapse: collapse;
+        }
     </style>
     <script>
         function showForm(){
@@ -16,6 +24,16 @@
         }
         function closeForm(){
             document.getElementById("myForm").style.display = "none";
+
+        }
+    </script>
+    <script>
+        function showForm1(){
+            document.getElementById("myForm1").style.display = "block";
+
+        }
+        function closeForm1(){
+            document.getElementById("myForm1").style.display = "none";
 
         }
     </script>
@@ -35,11 +53,57 @@
             </tr>
             <tr>
                 <td></td>
-                <td></t><button onclick="showForm()">Đăng nhập</button></td>
+                <td></t><button type="button" onclick="showForm()">Đăng nhập</button></td>
             </tr>
         </table>
     </form>
-    <form action="#" id="myForm">
+    <div id="myForm">
+        <h2>Nhập kho</h2>
+    <table id="myTable" border="collapse">
+        <tr>
+            <th>Sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Chủng loại</th>
+            <th>Thao tác</th>
+        </tr>
+        <tr>
+            <td>Main Gigabyte H310</td>
+            <td>20</td>
+            <td>Máy tính</td>
+            <td>
+                <button type="button" onclick="">Sửa</button>
+                <button type="button" onclick="">Xóa</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Máy in Canon 2900</td>
+            <td>20</td>
+            <td>Máy in</td>
+            <td>
+                <button type="button" onclick="">Sửa</button>
+                <button type="button" onclick="">Xóa</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Camera IP Dahua</td>
+            <td>30</td>
+            <td>Camera</td>
+            <td>
+                <button type="button" onclick="">Sửa</button>
+                <button type="button" onclick="">Xóa</button>
+            </td>
+        </tr>
+        <tr>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td></td>
+        </tr>
+    </table><br>
+            <button type="button" onclick="showForm1()">Thêm sản phẩm</button>
+            <button type="button" onclick="closeForm()">Đóng</button>
+    </div>
+    <form action="#" id="myForm1">
         <h2>Thông tin hàng hóa</h2>
         <table>
             <tr>
@@ -95,7 +159,7 @@
                 <td>
                     <input type="submit" value="Send Data">
                     <input type="reset" value="Reset">
-                    <input type="button" value="Đóng" onclick="closeForm()">
+                    <input type="button" value="Đóng" onclick="closeForm1()">
                 </td>
         </table>
     </form>
